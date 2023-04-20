@@ -7,10 +7,10 @@ files:
     destination: /webapps/myApp
 hooks:
   BeforeInstall:
-    - location: Scripts/UnzipResourceBundle.sh
+    - location: Scripts/stop tomcat
     - location: Scripts/UnzipDataBundle.sh
   AfterInstall:
-    - location: Scripts/RunResourceTests.sh
+    - location: Scripts/start tomcat
       timeout: 180
   ApplicationStart:
     - location: Scripts/RunFunctionalTests.sh
