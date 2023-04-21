@@ -1,21 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: Config/config.txt
-    destination: /webapps/Config
-  - source: source
-    destination: /webapps/myApp
+  - source: /home/ubuntu/
+    destination: /home/ubuntu/tomcat/webapps/
 hooks:
   BeforeInstall:
     - location: Scripts/Beforeinstall.sh
   AfterInstall:
     - location: Scripts/Afterinstall.sh
       timeout: 180
-  ApplicationStart:
-    - location: Scripts/Applicationstart.sh
-      timeout: 3600
-  ValidateService:
-    - location: Scripts/Validateservice.sh
-      timeout: 3600
       runas: codedeployuser
 
