@@ -1,3 +1,4 @@
 #!/bin/bash
-sudo systemctl stop tomcat.service
+cp -R *.war /home/ubuntu/tomcat/webapps/
+sudo systemctl start tomcat.service
 ##
