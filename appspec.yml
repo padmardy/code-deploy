@@ -7,16 +7,15 @@ files:
     destination: /webapps/myApp
 hooks:
   BeforeInstall:
-    - location: Scripts/stop tomcat
-    - location: Scripts/UnzipDataBundle.sh
+    - location: Scripts/Beforeinstall.sh
   AfterInstall:
-    - location: Scripts/start tomcat
+    - location: Scripts/Afterinstall.sh
       timeout: 180
   ApplicationStart:
-    - location: Scripts/RunFunctionalTests.sh
+    - location: Scripts/Applicationstart.sh
       timeout: 3600
   ValidateService:
-    - location: Scripts/MonitorService.sh
+    - location: Scripts/Validateservice.sh
       timeout: 3600
       runas: codedeployuser
 
